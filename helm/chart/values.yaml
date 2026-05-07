@@ -13,3 +13,6 @@ containers:
     image: docker.io/krn010/cart
     imagePullPolicy: Always
 
+volumeMounts:
+  - name: parameters
+    mountPath: /parameters

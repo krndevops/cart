@@ -27,8 +27,7 @@ spec:
               memory: "150Mi"
               cpu: "100m"
           volumeMounts:
-            - mountPath: /parameters
-              name: parameters
+            {{- toYaml .Values.volumeMounts | nindent 12 }}
           env:
             - name: PARAMS
               value: {{ .Values.PARAMS }}
@@ -38,8 +37,7 @@ spec:
           image:  {{ .Values.containers.main.image }}
           imagePullPolicy: {{ .Values.containers.main.imagePullPolicy }}
           volumeMounts:
-            - mountPath: /parameters
-              name: parameters
+            {{- toYaml .Values.volumeMounts | nindent 12 }}
 
       volumes:
         - name: parameters
