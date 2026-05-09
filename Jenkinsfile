@@ -7,6 +7,7 @@ def unitTests() {
 def integrationTests() {
     stage('Integration Tests'){
         echo 'OK'
+        sh 'env'
     }
 }
 
@@ -58,4 +59,4 @@ node('workstation') {
     }
 }
 
-// 1
+//
