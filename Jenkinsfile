@@ -58,5 +58,3 @@ node('workstation') {
         codeQuality()
     }
 }
-
-//
