@@ -15,6 +15,7 @@ pipeline {
             when { not { branch 'main' } }
             steps {
                 echo 'OK'
+                sh 'env'
             }
         }
         stage('Code Quality'){
