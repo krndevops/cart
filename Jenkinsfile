@@ -1,34 +1,56 @@
+def unitTests() {
+    stage('Unit Tests'){
+        echo 'OK'
+    }
+}
+
+def integrationTests() {
+    stage('Integration Tests'){
+        echo 'OK'
+    }
+}
+
+def codeQuality() {
+    stage('Code Quality'){
+        echo 'OK'
+    }
+}
+
+def sast() {
+    stage('SAST'){
+        echo 'OK'
+    }
+}
+
+def sca() {
+    stage('SCA'){
+        echo 'OK'
+    }
+}
+
+def secretDetection() {
+    stage('SECRET Detection'){
+        echo 'OK'
+    }
+}
+
+def artifactProduce() {
+    stage('Artifact Produce'){
+        echo 'OK'
+    }
+}
+
 node('workstation') {
+    if (env.BRANCH_NAME == 'main') {
+        echo 'Nothing to Do'
 
-        stage('Unit Test'){
-            echo 'OK'
-        }
+    }
+    else if (env.BRANCH_NAME =~ '.*') {
+        unitTests()
+        integrationTests()
+        codeQuality()
 
-        stage('Integration Tests'){
-                echo 'OK'
-                sh 'env'
-            }
-
-        stage('Code Quality'){
-            echo 'OK'
-        }
-
-        stage('SAST'){
-                echo 'OK'
-            }
-
-        stage('SCA'){
-                echo 'OK'
-            }
-
-        stage('Secret Detection'){
-                echo 'OK'
-            }
-
-        stage('Artifact Produce'){
-                echo 'OK'
-            }
-
-      }
+    }
+}
 
 // 1
