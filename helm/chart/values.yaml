@@ -5,12 +5,12 @@ service:
 
 initContainers:
   parameters_pull:
-    image: docker.io/krn010/parameter-store-init-container-image
+    image: 367241114876.dkr.ecr.us-east-1.amazonaws.com/default/parameter-store-init-container-image:1.0.0
     imagePullPolicy: Always
 
 containers:
   main:
-    image: docker.io/krn010/cart
+    image: 367241114876.dkr.ecr.us-east-1.amazonaws.com/default/cart:1.0.0
     imagePullPolicy: Always
 
 volumeMounts:
