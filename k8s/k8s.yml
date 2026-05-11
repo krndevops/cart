@@ -11,7 +11,7 @@ spec:
       targetPort: 8080
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: cart
   labels:
